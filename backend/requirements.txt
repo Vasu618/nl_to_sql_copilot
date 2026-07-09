@@ -1,0 +1,19 @@
+# Backend dependencies — NL-to-SQL Analytics Copilot
+# Pinned to the stack defined in docs/architecture.md
+
+fastapi==0.139.0
+uvicorn[standard]==0.37.0
+sqlglot==30.12.0          # AST-based SQL validation (non-negotiable per architecture.md)
+sqlalchemy==2.0.51        # DB connection abstraction (SQLite dev / Postgres prod)
+faker==40.28.1            # Synthetic data with engineered ground truth (see README)
+pydantic==2.13.4
+pydantic-settings==2.4.0
+python-dotenv==1.0.1
+httpx==0.28.1
+anthropic==0.116.0        # Claude API client (primary LLM provider per architecture.md)
+psycopg[binary]>=3.1      # Postgres driver (needed for production deployment)
+
+# ---- Dev dependencies (only needed for local dev + testing) ----
+pytest>=8.0
+requests>=2.31
+google-generativeai>=0.8.0
